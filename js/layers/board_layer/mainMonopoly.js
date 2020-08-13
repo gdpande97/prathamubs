@@ -249,7 +249,7 @@ monopoly.startScenarios = function(blockNo){
         monopoly.callStartScenario(currentTemplateName, currentTemplate, key);       
       } else {
          ubsApp.currentScenarioCategory = "";
-        ubsApp.nextMove();
+        ubsApp.nextMove()
       }
 
        

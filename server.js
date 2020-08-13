@@ -54,6 +54,14 @@ io.on('connection', function (socket) {
         socket.emit('startScenarioToClient',{
             description : "This event calls the startScenario on all clients in room", templateName : data.templateName, template : data.template, key : data.key
         })
+    socket.on('serverClosePopup', function(data){
+        console.log("Server side close pop up function");
+        socket.emit('socketClosePopup', {
+            description : "Calling close pop up on current client"
+        });
+        socket.in(1).emit('socketClosePopup', {
+            description : "Calling close popup on all clients in room"
+        });
     })
 })
 
